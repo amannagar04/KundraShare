@@ -33,6 +33,11 @@ io.on("connection", function(socket){
 
 
 
-server.listen(5000, () => {
-    console.log("Server is running on http://localhost:5000");
+// server.listen(5000, () => {
+//     console.log("Server is running on http://localhost:5000");
+// });
+server.listen(5000, "0.0.0.0", () => {
+    console.log("Server is running on http://192.168.137.1:5000");
 });
+
+//  192.168.137.1

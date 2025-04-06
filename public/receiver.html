@@ -3,11 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FileShareProject</title>
+    <title>Receiver</title>
+    <link rel="icon" href="/images/logo.png" type="image/png">
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
     <div class="app">
+        <!-- Heading to indicate user role -->
+        <header style="background: #111; color: #fff; text-align: center; padding: 15px 0; font-size: 20px;">
+            📥 You are a Receiver
+        </header>
+
         <div class="screen join-screen active">
             <div class="form">
                 <h2>Share your files securely</h2>
@@ -18,19 +24,29 @@
                 <div class="form-input">
                     <button id="receiver-start-con-btn">Connect</button>
                 </div>
+                <!-- Redirect to sender button -->
+                <div class="form-input-2">
+                    <button id="go-to-sender-btn">Switch Mode</button>
+                </div>
             </div>
         </div>
+
         <div class="screen fs-screen">
-            
             <div class="files-list">
                 <div class="title">Shared files:</div>
             </div>
         </div>
     </div>
-    
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/downloadjs/1.4.1/download.min.js"></script>
     <script type="text/javascript" src="socket.io/socket.io.js"></script>
     <script type="text/javascript" src="./receiver.js"></script>
+
+    <!-- Redirect logic -->
+    <script>
+        document.getElementById("go-to-sender-btn").addEventListener("click", function () {
+            window.location.href = "/";
+        });
+    </script>
 </body>
 </html>
